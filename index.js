@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
   let page;
   (async () => {
     page = await (await browserP).newPage();
-    await page.setContent(`<p>Hudson Andrade - web running at ${Date()}</p>`);
+    await page.setContent(`<p>Hudson Andrade - web running at ${Date()}</p>`); //teste
     res.send(await page.content());
   })()
     .catch(err => res.sendStatus(500))
