@@ -1,4 +1,5 @@
 const express = require("express");
+const router = require('express').Router();
 const puppeteer = require("puppeteer");
 
 const app = express();
@@ -34,6 +35,10 @@ app.get("/teste", (req, res) => {
       .catch(err => res.sendStatus(500))
       .finally(() => page.close())
     ;
+  });
+
+  router.get('/pagina', (req, res) => {
+    res.render('pagina')
   });
 
 app.listen(app.get("port"), () => 
